@@ -1,0 +1,67 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>StackOverflow Assistant</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+        text-align:center;
+      }
+      #container{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width:300px;
+      }
+      h3 {
+        line-height:20px;
+      }
+      #inputURL {
+        display:block;
+        width:250px;
+        margin:0 auto;
+        border:1px solid #dfdfdf;
+        text-align:center;
+        height:25px;
+      }
+      #inputURL:focus {
+        outline:0;
+      }
+      #submit {
+        width:100px;
+        height:30px;
+        background-color:#f48024;
+        color:white;
+        border:0;
+        cursor:pointer;
+      }
+      #submit:focus {
+        outline:0;
+        background-color:#ff9933;
+      }
+      #buttonHolder {
+        padding:15px 0 10px 0;
+        text-align:center;
+      }
+    </style>
+
+  <script src="popup.js"></script>
+
+  </head>
+  <body>
+    <div id="container">
+      <h3>StackOverflow Assistant</h3>
+      <form id="myForm">
+        <input type="text" id="inputURL" action="doStuff()" autofocus="autofocus" placeholder="Enter Search Term" autocomplete="off" value="">
+        <div id="buttonHolder">
+          <button id="submit">Search</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
